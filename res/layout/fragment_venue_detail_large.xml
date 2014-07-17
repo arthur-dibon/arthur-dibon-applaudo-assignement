@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+     tools:context="com.gg.assigment.fragments.BookDetailFragment"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent" >
+    
+    <ImageView android:id="@+id/img_venue"
+      android:layout_width="fill_parent"
+      android:layout_height="400dp"
+      android:scaleType="fitXY"
+      android:gravity="center_vertical"/>
+    
+    <TextView 
+	    android:id="@+id/text_title"
+	    style="?android:attr/textAppearanceLarge"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@id/img_venue"
+	    android:background="#80000000"
+	    android:textColor="#fff"
+	    android:textStyle="bold"
+	    android:padding="16dp"
+	    android:textIsSelectable="true"
+	    android:text="title"
+	    android:paddingLeft="20dp"
+    />
+    
+    <TextView 
+	    android:id="@+id/text_address"
+	    style="?android:attr/textAppearanceMedium"
+	 	android:textColor="#000"
+	 	android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	 	android:layout_below="@id/text_title"
+	 	android:paddingTop="10dp"
+	 	android:paddingLeft="20dp"
+	    android:paddingRight="10dp"
+	/>
+    
+    <TextView 
+	    android:id="@+id/text_city_cp"
+	    style="?android:attr/textAppearanceMedium"
+	 	android:textColor="#000"
+	 	android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	 	android:layout_below="@id/text_address"
+	 	android:paddingTop="10dp"
+	 	android:paddingLeft="20dp"
+	    android:paddingRight="10dp"
+	/>
+    
+    <ListView  android:id="@+id/list_schedule"
+        android:layout_width="wrap_content"
+	    android:layout_height="match_parent"
+	    android:paddingTop="10dp"
+	    android:paddingLeft="20dp"
+	    android:paddingRight="10dp"
+	    android:paddingBottom="10dp"
+	    android:layout_below="@id/text_city_cp"/>
+    
+</RelativeLayout>
