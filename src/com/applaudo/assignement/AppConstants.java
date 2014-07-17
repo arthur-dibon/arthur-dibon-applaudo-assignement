@@ -1,7 +1,5 @@
 package com.applaudo.assignement;
 
-import android.content.Context;
-import android.graphics.Typeface;
 
 /**
  * This class is used to keep all global constants.
