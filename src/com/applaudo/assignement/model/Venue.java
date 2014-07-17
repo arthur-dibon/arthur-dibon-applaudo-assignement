@@ -35,7 +35,7 @@ public class Venue {
 	private String mUrl;
 	@SerializedName("description")
 	private String mDescription;
-	@SerializedName("ticketlink")
+	@SerializedName("ticket_link")
 	private String mTicketLink;
 	@SerializedName("image_url")
 	private String mImageUrl;

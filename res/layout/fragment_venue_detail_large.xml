@@ -1,62 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-     xmlns:tools="http://schemas.android.com/tools"
-     tools:context="com.gg.assigment.fragments.BookDetailFragment"
-     android:layout_width="match_parent"
-     android:layout_height="match_parent" >
-    
-    <ImageView android:id="@+id/img_venue"
-      android:layout_width="fill_parent"
-      android:layout_height="400dp"
-      android:scaleType="fitXY"
-      android:gravity="center_vertical"/>
-    
-    <TextView 
-	    android:id="@+id/text_title"
-	    style="?android:attr/textAppearanceLarge"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_alignBottom="@id/img_venue"
-	    android:background="#80000000"
-	    android:textColor="#fff"
-	    android:textStyle="bold"
-	    android:padding="16dp"
-	    android:textIsSelectable="true"
-	    android:text="title"
-	    android:paddingLeft="20dp"
-    />
-    
-    <TextView 
-	    android:id="@+id/text_address"
-	    style="?android:attr/textAppearanceMedium"
-	 	android:textColor="#000"
-	 	android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	 	android:layout_below="@id/text_title"
-	 	android:paddingTop="10dp"
-	 	android:paddingLeft="20dp"
-	    android:paddingRight="10dp"
-	/>
-    
-    <TextView 
-	    android:id="@+id/text_city_cp"
-	    style="?android:attr/textAppearanceMedium"
-	 	android:textColor="#000"
-	 	android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	 	android:layout_below="@id/text_address"
-	 	android:paddingTop="10dp"
-	 	android:paddingLeft="20dp"
-	    android:paddingRight="10dp"
-	/>
-    
-    <ListView  android:id="@+id/list_schedule"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gg.assigment.fragments.BookDetailFragment" >
+
+    <ImageView
+        android:id="@+id/img_venue"
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        android:gravity="center_vertical"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/text_title"
+        style="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/img_venue"
+        android:background="#80000000"
+        android:padding="16dp"
+        android:paddingLeft="20dp"
+        android:text="title"
+        android:textColor="#fff"
+        android:textIsSelectable="true"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_address"
+        style="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
-	    android:layout_height="match_parent"
-	    android:paddingTop="10dp"
-	    android:paddingLeft="20dp"
-	    android:paddingRight="10dp"
-	    android:paddingBottom="10dp"
-	    android:layout_below="@id/text_city_cp"/>
-    
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_title"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:textColor="#000" />
+
+    <TextView
+        android:id="@+id/text_city_cp"
+        style="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_address"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:textColor="#000" />
+
+    <RelativeLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <Button
+            android:id="@+id/button_direction"
+            style="?android:attr/textAppearanceMedium"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/selector_menu_button"
+            android:drawableRight="@drawable/direction"
+            android:text="@string/direction" />
+
+        <Button
+            android:id="@+id/button_call"
+            style="?android:attr/textAppearanceMedium"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/button_direction"
+            android:background="@drawable/selector_menu_button"
+            android:drawableRight="@drawable/call"
+            android:text="@string/call_phone" />
+
+        <Button
+            android:id="@+id/button_tickets"
+            style="?android:attr/textAppearanceMedium"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/button_call"
+            android:background="@drawable/selector_menu_button"
+            android:drawableRight="@drawable/tickets"
+            android:text="@string/buy_tickets" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/list_schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@id/layout_bottom"
+        android:layout_below="@id/text_city_cp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp" />
+
 </RelativeLayout>

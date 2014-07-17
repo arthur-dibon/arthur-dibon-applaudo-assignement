@@ -59,10 +59,48 @@
             android:paddingTop="10dp"
             android:textColor="#000" />
 
+        <LinearLayout
+            android:id="@+id/layout_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" >
+
+            <Button
+                android:id="@+id/button_tickets"
+                style="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_menu_button"
+                android:drawableRight="@drawable/tickets"
+                android:text="@string/buy" />
+            
+            <Button
+                android:id="@+id/button_call"
+                style="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_menu_button"
+                android:drawableRight="@drawable/call"
+                android:text="@string/call" />
+
+            <Button
+                android:id="@+id/button_direction"
+                style="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_menu_button"
+                android:drawableRight="@drawable/direction"
+                android:text="@string/go" />
+        </LinearLayout>
+
         <ListView
             android:id="@+id/list_schedule"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_above="@id/layout_bottom"
             android:layout_below="@id/text_city_cp"
             android:paddingBottom="10dp"
             android:paddingLeft="20dp"

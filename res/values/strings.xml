@@ -7,5 +7,13 @@
     <string name="error_server">The server is experiencing technical difficulties, please try again later</string>
     <string name="error_no_internet">No internet connection available</string>
     <string name="assigment">Interview Homework Project (Android)</string>
+    <string name="call">Call</string>
+    <string name="call_phone">Call phone</string>
+    <string name="tickets">Tickets</string>
+    <string name="buy_tickets">Buy tickets</string>
+    <string name="direction">Direction</string>
+    <string name="go_to">Go to</string>
+    <string name="go">Go</string>
+    <string name="buy">Buy</string>
 
 </resources>

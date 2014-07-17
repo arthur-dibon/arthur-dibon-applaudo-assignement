@@ -4,18 +4,20 @@
     android:layout_height="fill_parent"
     android:background="#FFF"
     android:gravity="center"
-    android:orientation="vertical">
- 
-    <ImageView android:layout_width="wrap_content"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="logo"
         android:layout_centerInParent="true"
-        android:src="@drawable/logo"/>
-    
-    <TextView android:layout_width="wrap_content"
+        android:contentDescription="logo"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
+        android:text="@string/assigment"
         android:textColor="#000"
-        android:text="@string/assigment"/>
-    
+        android:textStyle="bold" />
+
 </LinearLayout>
