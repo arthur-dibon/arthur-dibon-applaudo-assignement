@@ -47,9 +47,9 @@ pretty empty. I saw that I could get smaller images from the server (100*100)
 that would not take to much to load. 
 Thanks to the Picasso library, once the image is loaded it can be reused in 
 the details. 
-I also added tiny icons in the list item to show what venues had schedule and
-tickets. In the venues details I added the buttons to call, launch browser
-to buy tickets and open maps to get directions.
+I also added tiny icons in the list item to show if venues had schedule and
+tickets. In the venues details I added the buttons to call, launch
+browser to buy tickets and to open maps to get directions.
 The application supports rotation of the phone.
 
 ![Screenshot-1](http://oi58.tinypic.com/9lfoeo.jpg)
@@ -63,11 +63,11 @@ Third-party Libraries
 
 The following dependencies are bundled with the assignment:
 
-* [appcompat_7](https://developer.android.com/tools/support-library/features.html) 
+* [appcompat_7](https://developer.android.com/tools/support-library/features.html) Support Library
 
 The following libraries used in the project
 
 * [Picasso](http://square.github.io/picasso/) Image loading
-* (GSON)(https://code.google.com/p/google-gson/) JSON parsing
-* (Volley)(https://developers.google.com/events/io/sessions/325304728) Network requests
+* [GSON](https://code.google.com/p/google-gson/) JSON parsing
+* [Volley](https://developers.google.com/events/io/sessions/325304728) Network requests
 
