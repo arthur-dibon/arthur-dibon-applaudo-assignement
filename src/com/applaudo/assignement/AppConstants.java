@@ -34,19 +34,8 @@ public class AppConstants {
 
 	
 	/**
-	 * Default Typeface used in the application
-	 */
-	private static Typeface tNeue;
-	
-	public static Typeface getFont(Context context){
-		if(tNeue == null){
-			tNeue= Typeface.createFromAsset(context.getAssets(), "HelveticaNeue-UltraLight.otf");
-		}
-	    return tNeue;
-	}
-	
-	/**
-	 * 
+	 * Just change the size of the venue image to get a smaller image 
+	 * for the list of venues
 	 * @param imageUrl
 	 * @return thumb url
 	 */

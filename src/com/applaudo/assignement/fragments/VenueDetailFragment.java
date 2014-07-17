@@ -34,17 +34,27 @@ public class VenueDetailFragment extends Fragment {
 	 * Current venue
 	 */
 	private Venue mVenue;
-	
+
+	/**
+	 * The list of schedule items
+	 */
 	private ListView mListSchedule;
-	
+
+	/**
+	 * The schedule item adapters to add in the list
+	 */
 	private ScheduleAdapter mScheduleAdapter;
+
 	/**
 	 * Mandatory empty constructor for the fragment manager to instantiate the
 	 * fragment (e.g. upon screen orientation changes).
 	 */
 	public VenueDetailFragment() {
 	}
-	
+
+	/**
+	 * Textand image views
+	 */
 	private TextView mTitle, mAddress, mCityCP;
 	private ImageView mImageBook;
 
@@ -53,41 +63,48 @@ public class VenueDetailFragment extends Fragment {
 		super.onCreate(savedInstanceState);
 
 		if (getArguments().containsKey(ARG_ITEM_ID)) {
-			//Get book details
-			mVenue = VenueController.getInstance().getVenueWithId(getArguments().getLong(ARG_ITEM_ID));
+			// Get book details
+			mVenue = VenueController.getInstance().getVenueWithId(
+					getArguments().getLong(ARG_ITEM_ID));
 		}
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		
-		View rootView = inflater.inflate(R.layout.fragment_venue_detail, container, false);
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+
+		View rootView = inflater.inflate(R.layout.fragment_venue_detail,
+				container, false);
 		mTitle = ((TextView) rootView.findViewById(R.id.text_title));
-		mAddress =  ((TextView) rootView.findViewById(R.id.text_address));
-		mCityCP =  ((TextView) rootView.findViewById(R.id.text_city_cp));
-		mImageBook	=  ((ImageView) rootView.findViewById(R.id.img_venue));
-		mListSchedule  =  ((ListView) rootView.findViewById(R.id.list_schedule));
+		mAddress = ((TextView) rootView.findViewById(R.id.text_address));
+		mCityCP = ((TextView) rootView.findViewById(R.id.text_city_cp));
+		mImageBook = ((ImageView) rootView.findViewById(R.id.img_venue));
+		mListSchedule = ((ListView) rootView.findViewById(R.id.list_schedule));
 		return rootView;
 	}
-	
+
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-		//Poplulate the view in case we already got the details
+		// Poplulate the view in case we already got the details
 		if (mVenue != null) {
-			
+
 			mTitle.setText(mVenue.getName());
 			mAddress.setText(mVenue.getAddress());
-			mCityCP.setText(mVenue.getCity()+", "+mVenue.getState() + " " + mVenue.getPcode());
-			
-			if(!TextUtils.isEmpty(mVenue.getImageUrl()) && mImageBook != null){
-				Picasso.with(getActivity()).load(mVenue.getImageUrl()).into(mImageBook);
-			}else{
+			mCityCP.setText(mVenue.getCity() + ", " + mVenue.getState() + " "
+					+ mVenue.getPcode());
+
+			//We load the image if it exists of show the no photo available
+			if (!TextUtils.isEmpty(mVenue.getImageUrl()) && mImageBook != null) {
+				Picasso.with(getActivity()).load(mVenue.getImageUrl())
+						.into(mImageBook);
+			} else {
 				mImageBook.setImageResource(R.drawable.no_photo_available);
 			}
-			
-			if(mVenue.getSchedule() != null && mVenue.getSchedule().size() > 0){
-				mScheduleAdapter = new ScheduleAdapter(getActivity(), mVenue.getSchedule());
+
+			if (mVenue.getSchedule() != null && mVenue.getSchedule().size() > 0) {
+				mScheduleAdapter = new ScheduleAdapter(getActivity(),
+						mVenue.getSchedule());
 				mListSchedule.setAdapter(mScheduleAdapter);
 			}
 		}

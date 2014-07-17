@@ -14,7 +14,7 @@ import com.applaudo.assignement.R;
 import com.applaudo.assignement.model.ScheduleItem;
 
 /**
- * Adapter for product list, load products item information.
+ * Adapter for schedule items. It will simply display a text in a white box.
  * @author arthur
  *
  */
@@ -29,7 +29,7 @@ public class ScheduleAdapter extends BaseAdapter {
     	/**
     	 * Constuctor of the adapter
     	 * @param context
-    	 * @param results venues to display
+    	 * @param results schedule items to display
     	 * @param newPageListener
     	 */
     	public ScheduleAdapter(final Context context, final List<ScheduleItem> results) {

@@ -17,7 +17,9 @@ import com.applaudo.assignement.model.Venue;
 import com.squareup.picasso.Picasso;
 
 /**
- * Adapter for product list, load products item information.
+ * Adapter for venue items. Will display the thumb image, 
+ * the name of the address and a little calendar icon if
+ * needed.
  * @author arthur
  *
  */
@@ -84,16 +86,18 @@ public class VenueAdapter extends BaseAdapter {
  		    Venue venue = items.get(position);
  		    holder.title.setText(venue.getName());
  		    holder.address.setText(venue.getAddress() + ", " + venue.getCity() + ", " + venue.getState());
+ 		    
  		    //Use the library picasso in order to load the image in a different thread if needed
  		    if(!TextUtils.isEmpty(venue.getImageUrl())){
  		    	Picasso.with(mContext).load(AppConstants.getThumbImage(venue.getImageUrl()))
 				  .error(R.drawable.no_photo_available_thumb)
 				  .into(holder.thumb);
-
  		    }else{
+ 		    	//if empty image, we show photo no available image
  		    	holder.thumb.setImageResource(R.drawable.no_photo_available_thumb);
  		    }
  		    
+ 		    //Added a little icon if the venue contains schedule information
  		    if(venue.getSchedule() != null && venue.getSchedule().size() > 0){
  		    	holder.calendar.setVisibility(View.VISIBLE);
  		    }else{

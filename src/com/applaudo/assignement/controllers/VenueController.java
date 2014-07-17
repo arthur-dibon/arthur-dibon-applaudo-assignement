@@ -17,7 +17,6 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.applaudo.assignement.AppConstants;
 import com.applaudo.assignement.model.RequestResult;
-import com.applaudo.assignement.model.ScheduleItem;
 import com.applaudo.assignement.model.Venue;
 import com.applaudo.assignement.tools.Utils;
 import com.google.gson.Gson;
@@ -110,6 +109,7 @@ public class VenueController{
                 gsonBuilder.setDateFormat("yyyy-MM-dd HH:mm:ss Z");
                 Gson gson = gsonBuilder.create();
 				
+                //Parse the response with GSON library
 				ArrayList<Venue> temp = gson.fromJson(response.toString(), new TypeToken<ArrayList<Venue>>() {}.getType());
 				
 				if(temp.size() > 0){
@@ -140,6 +140,11 @@ public class VenueController{
 		queue.add(jsObjRequest);
 	}
 	
+	/**
+	 * Retrieve the venue with the venue id
+	 * @param id
+	 * @return venue found
+	 */
 	public Venue getVenueWithId(long id) {
 		
 		Venue tmp = new Venue();

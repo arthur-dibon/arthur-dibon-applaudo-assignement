@@ -11,6 +11,18 @@ import com.applaudo.assignement.AppConstants;
 import com.applaudo.assignement.adapters.VenueAdapter;
 import com.applaudo.assignement.controllers.VenueController;
 
+/**
+ * A list fragment representing a list of venues. This fragment also supports
+ * tablet devices by allowing list items to be given an 'activated' state upon
+ * selection. This helps indicate which item is currently being viewed in a
+ * {@link VenueDetailFragment}.
+ * <p>
+ * Activities containing this fragment MUST implement the {@link Callbacks}
+ * interface.
+ * <p>
+ * The fragment extends the infinite scroll list fragment in order to implement
+ * pagination.
+ */
 public class VenueListFragment extends ListFragment{
 
 	private static final String TAG = "VenueListFragment";
@@ -38,7 +50,7 @@ public class VenueListFragment extends ListFragment{
 	private VenueAdapter mVenueAdapter;
 
 	/**
-	 * We need to access the controller to fetech remote venues
+	 * We need to access the controller to get venues
 	 */
 	private VenueController mVenueController;
 	

@@ -75,23 +75,23 @@ public class VenueDetailActivity extends ActionBarActivity {
 		getMenuInflater().inflate(R.menu.share_menu, menu);
 		MenuItem item = menu.findItem(R.id.menu_item_share);
 		mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(item);
-		
-		if(mShareActionProvider == null) System.out.println("NULLLL");
-		else mShareActionProvider.setShareIntent(getShareIntent());
-		
-		
+		mShareActionProvider.setShareIntent(getShareIntent());
 		
 		return true;
 	}
 	
+	/**
+	 * Prepare the intent to share data to other applications
+	 * @return intent
+	 */
 	private Intent getShareIntent() {
 		Intent intent = new Intent(Intent.ACTION_SEND);
 		intent.setType("text/plain");
+		
 		if (mCurrentIdVenue != -1) {
 			
 			Venue venueToShare =  VenueController.getInstance().getVenueWithId(mCurrentIdVenue);
-			System.out.println("MAME:"+venueToShare.getName());
-			intent.putExtra(Intent.EXTRA_SUBJECT, "Awesome Bar!!");
+			intent.putExtra(Intent.EXTRA_SUBJECT, "Share venue");
 			intent.putExtra(Intent.EXTRA_TEXT, venueToShare.getName() + " "
 					+ venueToShare.getAddress());
 		}
